@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Heroes from './Heroes';
 import './index.css';
 
-const FirstLayer = ({ id }) => {
+const FirstLayer = ({ id, onBack }) => {
     const hero = Heroes.find(hero => hero.id === id);
     const [name, setName] = useState('');
     const [event, setEvent] = useState('');
@@ -13,6 +13,10 @@ const FirstLayer = ({ id }) => {
 
     const handleEventChange = (e) => {
         setEvent(e.target.value);
+    };
+
+    const handleBack = () => {
+        onBack();
     };
 
     const handleGenerateGreeting = () => {
@@ -59,7 +63,10 @@ const FirstLayer = ({ id }) => {
                     onChange={handleEventChange}
                 />
             </div>
-            <button className="btn" onClick={handleGenerateGreeting}>Generate Greeting</button>
+            <div className="btn-container">
+                <button className="btn" onClick={handleBack}>Back</button>
+                <button className="btn" onClick={handleGenerateGreeting}>Generate Greeting</button>
+            </div>
         </div>
         </>
     );

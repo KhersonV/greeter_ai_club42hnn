@@ -1,10 +1,13 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
+  background: #eee;
+  
 }
 
 .container {
-  width: 90%;
+  margin: 0 auto;
+  width: 96%;
   display: flex;
   flex-wrap: wrap;
   padding: 0 20px;

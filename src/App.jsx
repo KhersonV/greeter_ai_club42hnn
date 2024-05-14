@@ -12,8 +12,12 @@ function App() {
     setApproved(true);
   };
 
+  const handleBack = () => {
+    setApproved(false);
+  };
+
     if (approved) {
-      return <FirstLayer id = {tmp}/>;
+      return <FirstLayer id = {tmp} onBack={handleBack}/>;
     }
     else {
       return <SwitchHero onSelection={handleSelection} setTmp={setTmp}/>;
